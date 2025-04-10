@@ -1,1 +1,2 @@
-# staff
+# Staff pannel for Pixel
+
