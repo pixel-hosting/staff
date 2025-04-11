@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel-Hosting Staff Panel</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <!-- reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://images.unsplash.com/photo-1614851099511-773084f6911d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    form {
+      height: 520px;
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.13);
+      position: relative;
+      z-index: 1;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+      padding: 50px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    form * {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+    }
+
+    form h3 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    input {
+      height: 50px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
+      padding: 0 15px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    ::placeholder {
+      color: #e5e5e5;
+    }
+
+    button {
+      margin-top: 40px;
+      width: 100%;
+      background-color: #ffffff;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #eaeaea;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="loginForm">
+    <h3>Pixel-Hosting Staff Panel</h3>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter your username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" required>
+
+
+    <button type="button" id="loginBtn">Login</button>
+  </form>
+
+  <script>
+    // Simulate password for checking
+    const correctPassword = "PixelStaffJake&Dom"; 
+
+    const loginBtn = document.getElementById("loginBtn");
+    const loginForm = document.getElementById("loginForm");
+
+    // Function to handle login
+    loginBtn.addEventListener("click", () => {
+      const password = document.getElementById("password").value;
+      const username = document.getElementById("username").value;
+      
+      // Handle password check
+      if (password === correctPassword) {
+        loginForm.innerHTML = `<h3>Redirecting...</h3>`;
+        
+        setTimeout(() => {
+          window.location.href = "https://panel.modmail.cloud/auth/login"; // Redirect URL
+        }, 1500);
+      } else {
+        alert("Incorrect password!");
+      }
+    });
+  </script>
+
+ 
+
+</body>
+</html>
